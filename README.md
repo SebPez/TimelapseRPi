@@ -43,6 +43,16 @@ wget https://raw.githubusercontent.com/gonzalo/gphoto2-updater/master/gphoto2-up
 
 _____
 
+#  Auto-Mount Issue
+
+Fix for Nikon D3200
+
+```
+sudo chmod -x /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+```
+
+_____
+
 
 # Cloning SD
 
