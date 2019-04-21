@@ -54,7 +54,7 @@ sudo chmod -x /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
 _____
 
 
-# Cloning SD
+# Cloning SD - Recommended way
 
 https://etcher.io
 
@@ -106,3 +106,17 @@ https://www.raspberrypi.org/documentation/linux/usage/rc-local.md
 https://computers.tutsplus.com/articles/how-to-clone-raspberry-pi-sd-cards-using-the-command-line-in-os-x--mac-59911
 
 
+
+
+
+
+
+_____
+
+# RTC
+http://www.intellamech.com/RaspberryPi-projects/rpi_RTCds3231
+
+
+Enable kernel support
+sudo raspi-config.
+Choose Advanced Options then I2C and select yes to enable the interface.
