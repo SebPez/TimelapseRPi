@@ -115,9 +115,25 @@ _____
 
 # RTC
 http://www.intellamech.com/RaspberryPi-projects/rpi_RTCds3231
+https://github.com/skiselev/rpi_rtc_ds3231
 
 ```
 Enable kernel support
 sudo raspi-config.
 Choose Advanced Options then I2C and select yes to enable the interface.
+
+
+
+//
+Enable Kernel Support for DS3231 RTC
+
+Open /boot/config.txt in your favorite editor (nano, vi) as root. For example:
+
+$ sudo nano /boot/config.txt
+Add the following lines at the end of the file:
+
+# Enable DS3231 RTC
+dtoverlay=i2c-rtc,ds3231
+
 ```
+
