@@ -116,7 +116,8 @@ _____
 # RTC
 http://www.intellamech.com/RaspberryPi-projects/rpi_RTCds3231
 
-
+```
 Enable kernel support
 sudo raspi-config.
 Choose Advanced Options then I2C and select yes to enable the interface.
+```
