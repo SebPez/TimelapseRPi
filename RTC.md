@@ -49,7 +49,7 @@ http://www.intellamech.com/RaspberryPi-projects/rpi_RTCds3231
 Load the clock at boot
 sudo nano /etc/rc.local
 Add the following lines before exit 0
-echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
 hwclock -s
 Reboot
 ```

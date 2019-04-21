@@ -1,21 +1,60 @@
+import subprocess
 import datetime
+import time
 
-currentTime = datetime.datetime.now()
-# currentTime = datetime.datetime.now().replace(hour=18, minute=0, second=0, microsecond=0)
-
-todayBeginingOfDay = currentTime.replace(hour=7, minute=0, second=0, microsecond=0)
-todayEndOfDay = currentTime.replace(hour=18, minute=0, second=0, microsecond=0)
+subprocess.call(['gphoto2','--auto-detect'])
+subprocess.call(['gphoto2','--list-files'])
+time.sleep(2)
 
 status = ''
 
-if currentTime < todayBeginingOfDay:
-  status = 'Too Early'
+while True:
+    
+    currentTime = datetime.datetime.now()
 
-elif currentTime > todayEndOfDay:
-  status = 'Too late'
+    todayBeginingOfDay = currentTime.replace(hour=00, minute=35, second=00, microsecond=0)
+    todayEndOfDay = currentTime.replace(hour=00, minute=37, second=30, microsecond=0)
 
-elif currentTime >= todayBeginingOfDay:
-  status = 'Working time'
+    if currentTime < todayBeginingOfDay:
+        status = 'Too Early'
+        pass
 
-print status 
+    elif currentTime > todayEndOfDay:
+        status = 'Too late'
+        pass
+
+    elif currentTime >= todayBeginingOfDay:
+        status = 'Working time'
+        # subprocess.call(['gphoto2','--capture-image'])
+
+
+    print status, currentTime 
+    time.sleep(30)
+
+    # time.sleep(600)
+
+
+
+
+
+
+
+
+
+# status = ''
+# while True:
+
+#   if currentTime < todayBeginingOfDay:
+#     status = 'Too Early'
+#     pass
+
+#   elif currentTime > todayEndOfDay:
+#     status = 'Too late'
+#     pass
+
+#   elif currentTime >= todayBeginingOfDay:
+#     status = 'Working time'
+
+#   print status, currentTime 
+#   time.sleep(10)
 
